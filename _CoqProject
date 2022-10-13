@@ -51,3 +51,5 @@ Examples/Newick/Lexer/Semantic.v
 
 Examples/XML/Lexer/Literal.v
 Examples/XML/Lexer/Semantic.v
+
+Examples/BasicLisp/Lexer/Literal.v
