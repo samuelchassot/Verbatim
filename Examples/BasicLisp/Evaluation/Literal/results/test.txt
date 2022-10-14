@@ -1,7 +1,7 @@
 {
 "fname":"test.txt",
  "input_len":33,
- "times":[0.79331],
- "rest_len":26,
- "tokens_len":3
+ "times":[1.44602],
+ "rest_len":0,
+ "tokens_len":27
 }

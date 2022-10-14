@@ -56,16 +56,13 @@ Definition int_re := nat_re.
 
 Definition ru_int := (INT, int_re).
 
-
 (** Strings **)
-Definition ru_string := (NAME, string_re).
+Definition name_re := Plus (IterUnion [AZ_re; az_re]).
+Definition run_name := (NAME, name_re).
 
 (** Keywords **)
 Definition ru_if := (IF_OP, stringApp "if").
 Definition ru_defun := (DEFUN, stringApp "defun").
-
-
-
 
 (** operators **)
 Definition ru_plus := (PLUS_OP, stringApp "+").
@@ -81,21 +78,21 @@ Definition ru_rparen := (RIGHT_PAREN, stringApp ")").
 
 (** Compile rules and extract **)
 Definition rus : list Rule :=
-  [ru_ws;ru_int;ru_string;ru_if;ru_defun;ru_plus;
-  ru_minus;ru_timea;ru_divide;ru_lparen;ru_rparen].
+  [ru_ws;ru_int;ru_if;ru_defun;ru_plus;
+  ru_minus;ru_timea;ru_divide;ru_lparen;ru_rparen;run_name].
 
 Definition show_label (l : Label) : string :=
   match l with
-  | LEFT_PAREN => "("
-  | RIGHT_PAREN => ")"
+  | LEFT_PAREN => "LEFT_PAREN"
+  | RIGHT_PAREN => "RIGHT_PAREN"
   | INT => "INT"
   | NAME => "NAME"
-  | PLUS_OP => "+"
-  | MINUS_OP => "-"
-  | TIMES_OP => "*"
-  | DIVIDE_OP => "/"
-  | DEFUN => "defun"
-  | IF_OP => "if"
+  | PLUS_OP => "PLUS_OP"
+  | MINUS_OP => "MINUUS_OP"
+  | TIMES_OP => "TIMES_OP"
+  | DIVIDE_OP => "DIVIDE_OP"
+  | DEFUN => "DEFUN"
+  | IF_OP => "IF"
   | WS => "ws"
   end.
 
